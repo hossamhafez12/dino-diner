@@ -25,7 +25,7 @@ namespace DinoDiner.Menu.Sides
         {
             get
             {
-                return Price;
+                return price;
             }
             set
             {
