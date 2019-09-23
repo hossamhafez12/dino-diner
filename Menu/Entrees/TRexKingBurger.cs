@@ -1,7 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
 namespace DinoDiner.Menu.Entrees
 {
-    public class TRexKingBurger
+    public class TRexKingBurger : Entree
     {
         private bool bun = true;
         private bool pickle = true;
@@ -12,10 +14,7 @@ namespace DinoDiner.Menu.Entrees
         private bool tomato = true;
         private bool onion = true;
 
-        public double Price { get; set; }
-        public uint Calories { get; set; }
-
-        public List<string> Ingredients
+        public override List<string> Ingredients
         {
             get
             {
