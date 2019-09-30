@@ -7,15 +7,35 @@
   </PropertyGroup>
 
   <ItemGroup>
+<<<<<<< HEAD
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.2.0" />
     <PackageReference Include="xunit" Version="2.4.1" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.1"><IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 <PrivateAssets>all</PrivateAssets>
 </PackageReference>
+=======
+    <Compile Remove="Entrees\BrontowurstTest.cs" />
+    <Compile Remove="Entrees\DinoNuggetsTest.cs" />
+    <Compile Remove="Entrees\PrehistoricPBJTest.cs" />
+    <Compile Remove="Entrees\PterodactylWingsTest.cs" />
+    <Compile Remove="Entrees\SteakosaurusBurgerTest.cs" />
+    <Compile Remove="Entrees\TRexKingBurgerTest.cs" />
+    <Compile Remove="Entrees\VelociWrapTest.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.9.0" />
+    <PackageReference Include="xunit" Version="2.4.0" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.0" />
+>>>>>>> 2f58fd419fc71b8facdddbe2fe45487491db2e23
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Menu\Menu.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Entrees\" />
   </ItemGroup>
 
 </Project>
