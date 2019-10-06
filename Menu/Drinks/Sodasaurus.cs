@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Drinks
+namespace DinoDiner.Menu
 {
-    public class Sodasaurus : Drink
+    public class Sodasaurus : Drink, IMenuItem
     {
         private SodasaurusFlavor flavor;
         public SodasaurusFlavor Flavor
@@ -44,6 +44,10 @@ namespace DinoDiner.Menu.Drinks
                         break;
                 }
             }
+        }
+        public override string ToString()
+        {
+            return size + " " + flavor + " Sodasaurus";
         }
     }
 }

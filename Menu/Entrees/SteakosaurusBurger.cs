@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-namespace DinoDiner.Menu.Entrees
+namespace DinoDiner.Menu
 {
-    public class SteakosaurusBurger : Entree
+    public class SteakosaurusBurger : Entree, IMenuItem
     {
         private bool bun = true;
         private bool pickle = true;
@@ -29,7 +29,10 @@ namespace DinoDiner.Menu.Entrees
             this.Price = 5.15;
             this.Calories = 621;
         }
-
+        public override string ToString()
+        {
+            return "Steakosaurus Burger";
+        }
         public void HoldBun()
         {
             this.bun = false;

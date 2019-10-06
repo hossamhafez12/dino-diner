@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-namespace DinoDiner.Menu.Sides
+namespace DinoDiner.Menu
 {
-    public class Fryceritops : Side
+    public class Fryceritops : Side, IMenuItem
     {
         public Fryceritops()
         {
@@ -38,6 +38,10 @@ namespace DinoDiner.Menu.Sides
                 }
             }
 
+        }
+        public override string ToString()
+        {
+            return size + " Friceritops";
         }
     }
 }

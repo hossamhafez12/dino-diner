@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-namespace DinoDiner.Menu.Entrees
+namespace DinoDiner.Menu
 {
-    public class TRexKingBurger : Entree
+    public class TRexKingBurger : Entree, IMenuItem
     {
         private bool bun = true;
         private bool pickle = true;
@@ -41,7 +41,10 @@ namespace DinoDiner.Menu.Entrees
             this.Price = 8.45;
             this.Calories = 728;
         }
-
+        public override string ToString()
+        {
+            return "T-Rex King Burger";
+        }
         public void HoldBun()
         {
             this.bun = false;

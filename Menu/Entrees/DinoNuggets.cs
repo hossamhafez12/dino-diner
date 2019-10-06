@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 using Xunit;
-namespace DinoDiner.Menu.Entrees
+namespace DinoDiner.Menu
 {
-    public class DinoNuggets : Entree
+    public class DinoNuggets : Entree, IMenuItem
     {
         private int nuggetCount = 6;
-
         public override List<string> Ingredients
         {
             get
@@ -26,6 +25,10 @@ namespace DinoDiner.Menu.Entrees
         {
             this.Price = 4.25;
             this.Calories = 354;
+        }
+        public override string ToString()
+        {
+            return "Dino-Nuggets";
         }
         public void AddNugget()
         {

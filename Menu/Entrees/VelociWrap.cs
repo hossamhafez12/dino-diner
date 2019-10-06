@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-namespace DinoDiner.Menu.Entrees
+namespace DinoDiner.Menu
 {
-    public class VelociWrap : Entree
+    public class VelociWrap : Entree, IMenuItem
     {
         private bool lettuce = true;
         private bool dressing= true;
@@ -28,7 +28,10 @@ namespace DinoDiner.Menu.Entrees
             this.Price = 6.86;
             this.Calories = 356;
         }
-
+        public override string ToString()
+        {
+            return "Veloci-Wrap";
+        }
         public void HoldLettuce()
         {
             this.lettuce = false;

@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 using Xunit;
-namespace DinoDiner.Menu.Sides
+namespace DinoDiner.Menu
 {
-    public class MezzorellaSticks : Side
+    public class MezzorellaSticks : Side, IMenuItem
     {
         public MezzorellaSticks()
         {
@@ -39,6 +39,10 @@ namespace DinoDiner.Menu.Sides
                 }
             }
 
+        }
+        public override string ToString()
+        {
+            return size + " Mezzorella Sticks";
         }
     }
 }

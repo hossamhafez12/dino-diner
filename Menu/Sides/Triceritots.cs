@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 using Xunit;
-namespace DinoDiner.Menu.Sides
+namespace DinoDiner.Menu
 {
-    public class Triceritots : Side
+    public class Triceritots : Side, IMenuItem
     {
         public Triceritots()
         {
@@ -41,6 +41,10 @@ namespace DinoDiner.Menu.Sides
                         break;
                 }
             }
+        }
+        public override string ToString()
+        {
+            return size + " Triceritots";
         }
     }
 }

@@ -2,18 +2,18 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Drinks
+namespace DinoDiner.Menu
 {
-    public class Tyrannotea : Drink
+    public class Tyrannotea : Drink, IMenuItem
     {
-        public bool sweet = false;
+        public bool Sweet = false;
         public bool lemon = false;
         public Tyrannotea()
         {
             this.ingredients.Add("Water");
             this.ingredients.Add("Tea");
             if (lemon) ingredients.Add("Lemon");
-            if (sweet) ingredients.Add("Cane Sugar");
+            if (Sweet) ingredients.Add("Cane Sugar");
             this.Size = Size.Small;
         }
         public void AddLemon()
@@ -31,7 +31,7 @@ namespace DinoDiner.Menu.Drinks
                     case Size.Small:
                         this.price = 0.99;
                         this.calories = 8;
-                        if (sweet)
+                        if (Sweet)
                         {
                             this.calories = 16;
                         }
@@ -39,7 +39,7 @@ namespace DinoDiner.Menu.Drinks
                     case Size.Medium:
                         this.price = 1.49;
                         this.calories = 16;
-                        if (sweet)
+                        if (Sweet)
                         {
                             this.calories = 32;
                         }
@@ -47,7 +47,7 @@ namespace DinoDiner.Menu.Drinks
                     case Size.Large:
                         this.price = 1.99;
                         this.calories = 32;
-                        if (sweet)
+                        if (Sweet)
                         {
                             this.calories = 64;
                         }
@@ -56,6 +56,15 @@ namespace DinoDiner.Menu.Drinks
                         break;
                 }
             }
+        }
+        public override string ToString()
+        {
+            if (Sweet)
+            {
+                return size + " Sweet Tyrannotea";
+            }
+            else
+            return size + " Tyrannotea";
         }
     }
 }

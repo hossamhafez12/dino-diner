@@ -2,17 +2,17 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Sides
+namespace DinoDiner.Menu
 {
 
-    public enum Size
+   /* public enum Size
     {
         Small,
         Medium, 
         Large
-    }
+    }*/
 
-    public abstract class Side
+    public abstract class Side :  IMenuItem
     {
         protected double price;
         protected uint calories;

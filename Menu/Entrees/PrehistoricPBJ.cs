@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Entrees
+namespace DinoDiner.Menu
 {
-    public class PrehistoricPBJ : Entree
+    public class PrehistoricPBJ : Entree, IMenuItem
     {
         private bool peanutButter = true;
         private bool jelly = true;
@@ -26,7 +26,10 @@ namespace DinoDiner.Menu.Entrees
             this.Price = 6.52;
             this.Calories = 483;
         }
-
+        public override string ToString()
+        {
+            return "Prehistoric PB&J";
+        }
         public void HoldPeanutButter()
         {
             this.peanutButter = false;

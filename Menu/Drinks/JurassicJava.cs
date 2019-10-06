@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Drinks
+namespace DinoDiner.Menu
 {
-    public class JurrasicJava : Drink
+    public class JurassicJava : Drink, IMenuItem
     {
         public bool roomForCream = false;
-        public bool decaf = false;
+        public bool Decaf = false;
         public void LeaveRoomForCream()
         {
             this.roomForCream = true;
@@ -16,7 +16,7 @@ namespace DinoDiner.Menu.Drinks
         {
             this.Ice = true;
         }
-        public JurrasicJava()
+        public JurassicJava()
         {
             this.Ingredients.Add("Water");
             this.Ingredients.Add("Coffee");
@@ -47,6 +47,15 @@ namespace DinoDiner.Menu.Drinks
                         break;
                 }
             }
+        }
+        public override string ToString()
+        {
+            if (Decaf)
+            {
+                return size + " Decaf Jurassic Java";
+            }
+            else
+            return size + " Jurassic Java";
         }
     }
 }

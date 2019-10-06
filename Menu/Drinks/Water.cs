@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Drinks
+namespace DinoDiner.Menu
 {
-    public class Water : Drink
+    public class Water : Drink, IMenuItem
     {
         public bool lemon = false;
         public Water()
@@ -12,6 +12,10 @@ namespace DinoDiner.Menu.Drinks
             this.ingredients.Add("Water");
             if (lemon) ingredients.Add("Lemon");
             this.Size = Size.Small;
+        }
+        public override string ToString()
+        {
+            return size + " Water";
         }
         public override Size Size
         {
