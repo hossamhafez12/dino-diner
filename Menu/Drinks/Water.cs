@@ -9,13 +9,19 @@ namespace DinoDiner.Menu
         public bool lemon = false;
         public Water()
         {
-            this.ingredients.Add("Water");
-            if (lemon) ingredients.Add("Lemon");
+
             this.Size = Size.Small;
+
         }
-        public override string ToString()
+        public override List<string> Ingredients
         {
-            return size + " Water";
+            get
+            {
+                List<string> ingredients = new List<string>();
+                ingredients.Add("Water");
+                if (lemon) ingredients.Add("Lemon");
+                return ingredients;
+            }
         }
         public override Size Size
         {
@@ -45,6 +51,10 @@ namespace DinoDiner.Menu
         public void AddLemon()
         {
             this.lemon = true;
+        }
+        public override string ToString()
+        {
+            return size + " Water";
         }
     }
 }

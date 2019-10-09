@@ -18,11 +18,21 @@ namespace DinoDiner.Menu
         }
         public JurassicJava()
         {
-            this.Ingredients.Add("Water");
-            this.Ingredients.Add("Coffee");
+
             this.Ice = false;
             this.Size = Size.Small;
         }
+        public override List<string> Ingredients
+        {
+            get
+            {
+                List<string> ingredients = new List<string>();
+                ingredients.Add("Water");
+                ingredients.Add("Coffee");
+                return ingredients;
+            }
+        }
+
         public override Size Size
         {
             get { return size; }

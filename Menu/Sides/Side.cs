@@ -41,7 +41,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Gets the ingredients list
         /// </summary>
-        public List<string> Ingredients { get
+        public virtual List<string> Ingredients { get
             {
                 return ingredients;
             }

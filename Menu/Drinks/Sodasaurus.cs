@@ -14,12 +14,20 @@ namespace DinoDiner.Menu
         }
         public Sodasaurus()
         {
-
-            this.Ingredients.Add("Water");
-            this.Ingredients.Add("Natural Flavors");
-            this.Ingredients.Add("Cane Sugar");
             this.Size = Size.Small;
         }
+        public override List<string> Ingredients
+        {
+            get
+            {
+                List<string> ingredients = new List<string>();
+                ingredients.Add("Water");
+                ingredients.Add("Natural Flavors");
+                ingredients.Add("Cane Sugar");
+                return ingredients;
+            }
+        }
+
         public override Size Size
         {
             get { return size; }
