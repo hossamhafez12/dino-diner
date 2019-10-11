@@ -15,10 +15,16 @@
             </Style>
         </WrapPanel.Resources>
         <Button>
+            <Button.Background>
+                <ImageBrush ImageSource="Assets/DinoDiner-02.png"/>
+            </Button.Background>
             Dino-Nuggets Combo
         </Button>
         <Button>
-            Brontowurst Combo
+            <StackPanel>
+            <Image Width="100" Source="Assets/DinoDiner-01.png"/>
+            <TextBlock>Brontowurst Combo</TextBlock>
+            </StackPanel>
         </Button>
         <Button>
             Steakosaurus Combo
