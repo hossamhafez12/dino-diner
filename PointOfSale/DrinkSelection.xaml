@@ -39,6 +39,24 @@
             </Button.Background>
             Water
         </Button>
+        <Button VerticalContentAlignment="Bottom">
+            <Button.Background>
+                <ImageBrush ImageSource="Assets/DinoDiner-15.png"/>
+            </Button.Background>
+            Water
+        </Button>
+        <Button VerticalContentAlignment="Bottom">
+            <Button.Background>
+                <ImageBrush ImageSource="Assets/DinoDiner-15.png"/>
+            </Button.Background>
+            Water
+        </Button>
+        <Button VerticalContentAlignment="Bottom">
+            <Button.Background>
+                <ImageBrush ImageSource="Assets/DinoDiner-15.png"/>
+            </Button.Background>
+            Water
+        </Button>
         <RadioButton GroupName="Size" Content="Small"/>
         <RadioButton GroupName="Size" Content="Medium"/>
         <RadioButton GroupName="Size" Content="Large"/>
