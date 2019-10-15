@@ -23,5 +23,8 @@
             Drink
     </Button>
         <Button>Size</Button>
+        <RadioButton GroupName="Size" Content="Small"/>
+        <RadioButton GroupName="Size" Content="Medium"/>
+        <RadioButton GroupName="Size" Content="Large"/>
     </WrapPanel>
 </Page>
