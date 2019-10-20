@@ -5,7 +5,7 @@ using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
-    public class PrehistoricPBJ : Entree, INotifyPropertyChanged, IMenuItem
+    public class PrehistoricPBJ : Entree, INotifyPropertyChanged, IMenuItem, IOrderItem
     {
         private bool peanutButter = true;
         private bool jelly = true;

@@ -1,11 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
-    public class Sodasaurus : Drink, IMenuItem
+    public class Sodasaurus : Drink, IMenuItem, INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected void NotifyOfPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
         private SodasaurusFlavor flavor;
         public SodasaurusFlavor Flavor
         {
@@ -56,6 +63,21 @@ namespace DinoDiner.Menu
         public override string ToString()
         {
             return size + " " + flavor + " Sodasaurus";
+        }
+        public string Description
+        {
+            get
+            {
+                return size.ToString();
+            }
+        }
+        public string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                return special.ToArray();
+            }
         }
     }
 }

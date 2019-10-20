@@ -1,10 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 namespace DinoDiner.Menu
 {
-    public class Fryceritops : Side, IMenuItem
+    public class Fryceritops : Side, IMenuItem, INotifyPropertyChanged, IOrderItem
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected void NotifyOfPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
         public override List<string> Ingredients
         {
             get
@@ -49,6 +56,21 @@ namespace DinoDiner.Menu
         public override string ToString()
         {
             return size + " Friceritops";
+        }
+        public string Description
+        {
+            get
+            {
+                return size.ToString();
+            }
+        }
+        public string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                return special.ToArray();
+            }
         }
     }
 }

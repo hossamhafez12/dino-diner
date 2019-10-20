@@ -2,10 +2,17 @@
 using System.Collections.Generic;
 using System.Text;
 using Xunit;
+using System.ComponentModel;
 namespace DinoDiner.Menu
 {
-    public class MezzorellaSticks : Side, IMenuItem
+    public class MezzorellaSticks : Side, IMenuItem, INotifyPropertyChanged 
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected void NotifyOfPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
         public override List<string> Ingredients
         {
             get
@@ -50,6 +57,21 @@ namespace DinoDiner.Menu
         public override string ToString()
         {
             return size + " Mezzorella Sticks";
+        }
+        public string Description
+        {
+            get
+            {
+                return size.ToString();
+            }
+        }
+        public string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                return special.ToArray();
+            }
         }
     }
 }

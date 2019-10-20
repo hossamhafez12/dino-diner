@@ -2,10 +2,17 @@
 using System.Collections.Generic;
 using System.Text;
 using Xunit;
+using System.ComponentModel;
 namespace DinoDiner.Menu
 {
-    public class Triceritots : Side, IMenuItem
+    public class Triceritots : Side, IMenuItem, INotifyPropertyChanged 
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected void NotifyOfPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
         public override List<string> Ingredients
         {
             get
@@ -48,6 +55,21 @@ namespace DinoDiner.Menu
         public override string ToString()
         {
             return size + " Triceritots";
+        }
+        public string Description
+        {
+            get
+            {
+                return size.ToString();
+            }
+        }
+        public string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                return special.ToArray();
+            }
         }
     }
 }

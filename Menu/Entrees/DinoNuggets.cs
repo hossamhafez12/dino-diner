@@ -2,11 +2,19 @@
 using System.Collections.Generic;
 using System.Text;
 using Xunit;
+using System.ComponentModel;
 namespace DinoDiner.Menu
 {
-    public class DinoNuggets : Entree, IMenuItem
+    public class DinoNuggets : Entree, IMenuItem, INotifyPropertyChanged, IOrderItem
     {
         private int nuggetCount = 6;
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected void NotifyOfPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
         public override List<string> Ingredients
         {
             get
@@ -35,6 +43,21 @@ namespace DinoDiner.Menu
             nuggetCount++;
             Price += 0.25;
             Calories += 59;
+        }
+        public string Description
+        {
+            get
+            {
+                return this.ToString();
+            }
+        }
+        public string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                return special.ToArray();
+            }
         }
     }
 }
