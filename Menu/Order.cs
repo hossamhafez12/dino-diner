@@ -7,15 +7,39 @@ namespace DinoDiner.Menu
 {
     public class Order
     {
-        public ObservableCollection<IOrderItem> Items { get; set; }
+        public ObservableCollection<IOrderItem> Items { get; set; } = new ObservableCollection<IOrderItem>();
         
-        public double SubtotalCost { get; }
+        public double SubtotalCost
+        {
+            get
+            {
+                double subtotalCost = 0;
+                foreach (IOrderItem item in Items)
+                {
+                    subtotalCost += item.Price;
+
+                }
+                return subtotalCost;
+            }
+        }
         public double SalesTaxRate
         {
-            get; protected set;
+            get; set;
         }
-        public double SalesTaxCost { get; }
+        public double SalesTaxCost
+        {
+            get
+            {
+                return SubtotalCost * SalesTaxRate;
+            }
+        }
 
-        public double TotalCost { get; }
+        public double TotalCost
+        {
+            get
+            {
+                return SubtotalCost + SalesTaxCost;
+            }
+        }
     }
 }
