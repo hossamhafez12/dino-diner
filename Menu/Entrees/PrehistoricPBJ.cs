@@ -5,19 +5,13 @@ using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
-    public class PrehistoricPBJ : Entree, INotifyPropertyChanged, IMenuItem, IOrderItem
+    public class PrehistoricPBJ : Entree, IMenuItem, IOrderItem
     {
         private bool peanutButter = true;
         private bool jelly = true;
         /// <summary>
         /// AN event handler for the INotifyPropertyChanged interface
         /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected void NotifyOfPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
 
         public override List<string> Ingredients
         {

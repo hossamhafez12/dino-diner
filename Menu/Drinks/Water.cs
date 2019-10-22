@@ -5,14 +5,8 @@ using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
-    public class Water : Drink, IMenuItem, INotifyPropertyChanged
+    public class Water : Drink, IMenuItem, IOrderItem
     {
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected void NotifyOfPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
         public bool lemon = false;
         public Water()
         {
@@ -75,6 +69,11 @@ namespace DinoDiner.Menu
             get
             {
                 List<string> special = new List<string>();
+                if (lemon)
+                {
+                    special.Add("Add Lemon");
+                }
+                if (!ice) special.Add("Hold Ice");
                 return special.ToArray();
             }
         }

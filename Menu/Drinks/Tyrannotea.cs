@@ -5,14 +5,8 @@ using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
-    public class Tyrannotea : Drink, IMenuItem, INotifyPropertyChanged
+    public class Tyrannotea : Drink, IMenuItem, IOrderItem
     {
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected void NotifyOfPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
         public bool Sweet = false;
         public bool lemon = false;
         public Tyrannotea()
@@ -87,6 +81,11 @@ namespace DinoDiner.Menu
         {
             get
             {
+                List<string> description = new List<string>();
+                if (Sweet)
+                {
+                    description.Add("Sweet");
+                }
                 return size.ToString();
             }
         }
@@ -95,6 +94,11 @@ namespace DinoDiner.Menu
             get
             {
                 List<string> special = new List<string>();
+                if (lemon)
+                {
+                    special.Add("Add Lemon");
+                }
+                if (!ice) special.Add("Hold Ice");
                 return special.ToArray();
             }
         }

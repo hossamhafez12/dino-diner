@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
@@ -12,8 +13,15 @@ namespace DinoDiner.Menu
         Large
     }*/
 
-    public abstract class Side :  IMenuItem
+    public abstract class Side :  IMenuItem, INotifyPropertyChanged, IOrderItem
     {
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected void NotifyOfPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
         protected double price;
         protected uint calories;
         protected List<string> ingredients = new List<string>();
@@ -61,6 +69,8 @@ namespace DinoDiner.Menu
                 size = value;
             }
         }
+        public virtual string Description { get; }
+        public virtual string[] Special { get; }
 
     }
 }

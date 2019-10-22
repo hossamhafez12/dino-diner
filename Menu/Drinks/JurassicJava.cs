@@ -5,14 +5,8 @@ using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
-    public class JurassicJava : Drink, IMenuItem, INotifyPropertyChanged
+    public class JurassicJava : Drink, IMenuItem, IOrderItem
     {
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected void NotifyOfPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
         public bool roomForCream = false;
         public bool Decaf = false;
         public void LeaveRoomForCream()
@@ -78,7 +72,11 @@ namespace DinoDiner.Menu
         {
             get
             {
-                return size.ToString();
+                List<string> description = new List<string>();
+                description.Add(size.ToString());
+                description.Add(" ");
+                description.Add(this.ToString());           
+                return description.ToString();
             }
         }
         public string[] Special
@@ -86,6 +84,7 @@ namespace DinoDiner.Menu
             get
             {
                 List<string> special = new List<string>();
+                if (ice) special.Add("Add Ice");
                 return special.ToArray();
             }
         }

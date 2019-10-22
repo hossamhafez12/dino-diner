@@ -5,16 +5,9 @@ using Xunit;
 using System.ComponentModel;
 namespace DinoDiner.Menu
 {
-    public class DinoNuggets : Entree, IMenuItem, INotifyPropertyChanged, IOrderItem
+    public class DinoNuggets : Entree, IMenuItem, IOrderItem
     {
         private int nuggetCount = 6;
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        protected void NotifyOfPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-
         public override List<string> Ingredients
         {
             get
@@ -43,6 +36,8 @@ namespace DinoDiner.Menu
             nuggetCount++;
             Price += 0.25;
             Calories += 59;
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
         }
         public string Description
         {
@@ -54,10 +49,9 @@ namespace DinoDiner.Menu
         public string[] Special
         {
             get
-            {
-
+            { 
                 List<string> special = new List<string>();
-                special.Add(nuggetCount - 6 + " extra nuggets");
+                if(nuggetCount > 6)special.Add(nuggetCount - 6 + " Extra Nuggets");
                 return special.ToArray();
             }
         }

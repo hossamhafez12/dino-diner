@@ -78,6 +78,14 @@ namespace MenuTest.Drinks
             JurassicJava jurrasic = new JurassicJava();
             Assert.False(jurrasic.roomForCream);
         }
+        ///////////////////////////////////////
+        ///
+        [Fact]
+        public void DescriptionShouldBeCorrect()
+        {
+            JurassicJava jj = new JurassicJava();
+            //Assert.Equal( + " Decaf Jurassic Java", jj.Description);
+        }
     }
 }
 

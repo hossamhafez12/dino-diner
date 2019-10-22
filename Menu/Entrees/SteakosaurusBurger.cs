@@ -4,19 +4,13 @@ using System.Text;
 using System.ComponentModel;
 namespace DinoDiner.Menu
 {
-    public class SteakosaurusBurger : Entree, IMenuItem, INotifyPropertyChanged, IOrderItem
+    public class SteakosaurusBurger : Entree, IMenuItem, IOrderItem
     {
         private bool bun = true;
         private bool pickle = true;
         private bool ketchup = true;
         private bool mustard = true;
 
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected void NotifyOfPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
         public override List<string> Ingredients
         {
             get

@@ -4,7 +4,7 @@ using System.Text;
 using System.ComponentModel;
 namespace DinoDiner.Menu
 {
-    public class TRexKingBurger : Entree, IMenuItem, INotifyPropertyChanged, IOrderItem
+    public class TRexKingBurger : Entree, IMenuItem, IOrderItem
     {
 
         private bool bun = true;
@@ -15,13 +15,6 @@ namespace DinoDiner.Menu
         private bool lettuce = true;
         private bool tomato = true;
         private bool onion = true;
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected void NotifyOfPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
         public override List<string> Ingredients
         {
             get

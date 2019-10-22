@@ -4,18 +4,12 @@ using System.Text;
 using System.ComponentModel;
 namespace DinoDiner.Menu
 {
-    public class VelociWrap : Entree, IMenuItem, INotifyPropertyChanged, IOrderItem
+    public class VelociWrap : Entree, IMenuItem, IOrderItem
     {
         private bool lettuce = true;
         private bool dressing= true;
         private bool cheese = true;
 
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected void NotifyOfPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
         public override List<string> Ingredients
         {
             get

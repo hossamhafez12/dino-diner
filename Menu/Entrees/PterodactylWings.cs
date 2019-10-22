@@ -4,14 +4,8 @@ using System.Text;
 using System.ComponentModel;
 namespace DinoDiner.Menu
 {
-    public class PterodactylWings : Entree, IMenuItem, INotifyPropertyChanged, IOrderItem
+    public class PterodactylWings : Entree, IMenuItem, IOrderItem
     {
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected void NotifyOfPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
         public override List<string> Ingredients
         {
             get

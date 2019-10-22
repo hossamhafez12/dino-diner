@@ -41,7 +41,7 @@ namespace DinoDiner.Menu
         /// </summary>
         public Side Side { get; set; } = new Fryceritops();
         private Drink drink = new Sodasaurus();
-        private Drink Drink
+        public Drink Drink
         {
             get { return drink; }
             set

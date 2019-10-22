@@ -5,14 +5,8 @@ using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
-    public class MeteorMacAndCheese : Side, IMenuItem, INotifyPropertyChanged
+    public class MeteorMacAndCheese : Side, IMenuItem, IOrderItem
     {
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected void NotifyOfPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
         public override List<string> Ingredients
         {
             get

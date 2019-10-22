@@ -4,14 +4,8 @@ using System.Text;
 using System.ComponentModel;
 namespace DinoDiner.Menu
 {
-    public class Fryceritops : Side, IMenuItem, INotifyPropertyChanged, IOrderItem
+    public class Fryceritops : Side, IMenuItem, IOrderItem
     {
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected void NotifyOfPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
         public override List<string> Ingredients
         {
             get
@@ -55,7 +49,7 @@ namespace DinoDiner.Menu
         }
         public override string ToString()
         {
-            return size + " Friceritops";
+            return size + " Fryceritops";
         }
         public string Description
         {

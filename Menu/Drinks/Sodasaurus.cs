@@ -5,14 +5,8 @@ using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
-    public class Sodasaurus : Drink, IMenuItem, INotifyPropertyChanged
+    public class Sodasaurus : Drink, IMenuItem, IOrderItem
     {
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected void NotifyOfPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
         private SodasaurusFlavor flavor;
         public SodasaurusFlavor Flavor
         {
@@ -76,6 +70,7 @@ namespace DinoDiner.Menu
             get
             {
                 List<string> special = new List<string>();
+                if (!ice) special.Add("Hold Ice");
                 return special.ToArray();
             }
         }
