@@ -15,7 +15,7 @@
                 <Setter Property="MinHeight" Value="140"></Setter>
             </Style>
         </WrapPanel.Resources>
-        <Button VerticalContentAlignment="Bottom">
+        <Button VerticalContentAlignment="Bottom" Click="OnSelectFryceritops">
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-08.png"/>
             </Button.Background>
@@ -39,8 +39,8 @@
             </Button.Background>
             Mozzerella Sticks
         </Button>
-        <RadioButton GroupName="Size" Content="Small"/>
-        <RadioButton GroupName="Size" Content="Medium"/>
-        <RadioButton GroupName="Size" Content="Large"/>
+        <RadioButton Name="MakeSmall" Tag ="Small" Click="OnChangeSize" Grid.Row="1" />
+        <RadioButton  Name="MakeMedium" Tag ="Medium" Click="OnChangeSize" Grid.Row="2"/>
+        <RadioButton  Name="MakeLarge" Tag ="Large" Click="OnChangeSize" Grid.Row="3"/>
     </WrapPanel>
 </Page>

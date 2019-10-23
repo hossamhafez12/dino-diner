@@ -4,7 +4,7 @@ using System.Text;
 using System.ComponentModel;
 namespace DinoDiner.Menu
 {
-    public class Fryceritops : Side, IMenuItem, IOrderItem
+    public class Fryceritops : Side, IMenuItem, IOrderItem, INotifyPropertyChanged
     {
         public override List<string> Ingredients
         {
@@ -43,9 +43,11 @@ namespace DinoDiner.Menu
                         break;
                     default:
                         break;
+                        
                 }
+                NotifyOfPropertyChanged("Description");
             }
-
+            
         }
         public override string ToString()
         {
@@ -55,7 +57,7 @@ namespace DinoDiner.Menu
         {
             get
             {
-                return size.ToString();
+                return this.ToString();
             }
         }
         public string[] Special

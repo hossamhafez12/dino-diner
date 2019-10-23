@@ -25,9 +25,5 @@ namespace PointOfSale
             InitializeComponent();
         }
 
-        private void TextBlock_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
-        {
-
-        }
     }
 }

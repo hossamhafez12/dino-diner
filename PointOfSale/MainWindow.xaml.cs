@@ -34,5 +34,21 @@ namespace PointOfSale
             order.Items.Add(sb);
             DataContext = order;
         }
+
+        private void PassDataContentToPage()
+        {
+            if(OrderUI.Content is FrameworkElement page)
+            {
+                page.DataContext = OrderUI.DataContext;
+            }
+        }
+        private void OnLoadCompleted(object sender, EventArgs args)
+        {
+            PassDataContentToPage();
+        }
+        private void OnDataContextChanged(object sender, DependencyPropertyChangedEventArgs args)
+        {
+            PassDataContentToPage();
+        }
     }
 }
