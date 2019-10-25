@@ -21,18 +21,21 @@ namespace PointOfSale
     /// </summary>
     public partial class MainWindow : Window
     {
+        public NavigationService NavigationService { get; set; }
         public MainWindow()
         {
+            
             InitializeComponent();
             Order order = new Order();
-            order.Items.Add(new PrehistoricPBJ());
+            /*order.Items.Add(new PrehistoricPBJ());
             order.Items.Add(new Sodasaurus());
             order.Items.Add(new Fryceritops());
             SteakosaurusBurger sb = new SteakosaurusBurger();
             sb.HoldPickle();
             sb.HoldBun();
-            order.Items.Add(sb);
+            order.Items.Add(sb);*/
             DataContext = order;
+            OrderItems.NavigationService = OrderUI.NavigationService;
         }
 
         private void PassDataContentToPage()
