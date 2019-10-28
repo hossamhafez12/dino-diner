@@ -38,6 +38,18 @@ namespace PointOfSale
             if(DataContext is Order order)
             {
                 side = new Fryceritops();
+                if ((bool)MakeSmall.IsChecked)
+                {
+                    side.Size = DinoDiner.Menu.Size.Small;
+                }
+                if ((bool)MakeMedium.IsChecked)
+                {
+                    side.Size = DinoDiner.Menu.Size.Medium;
+                }
+                if ((bool)MakeLarge.IsChecked)
+                {
+                    side.Size = DinoDiner.Menu.Size.Large;
+                }
                 order.Add(side);
             }
         }
@@ -46,6 +58,18 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 side = new Triceritots();
+                if ((bool)MakeSmall.IsChecked)
+                {
+                    side.Size = DinoDiner.Menu.Size.Small;
+                }
+                if ((bool)MakeMedium.IsChecked)
+                {
+                    side.Size = DinoDiner.Menu.Size.Medium;
+                }
+                if ((bool)MakeLarge.IsChecked)
+                {
+                    side.Size = DinoDiner.Menu.Size.Large;
+                }
                 order.Add(side);
             }
         }
@@ -54,6 +78,18 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 side = new MeteorMacAndCheese();
+                if ((bool)MakeSmall.IsChecked)
+                {
+                    side.Size = DinoDiner.Menu.Size.Small;
+                }
+                if ((bool)MakeMedium.IsChecked)
+                {
+                    side.Size = DinoDiner.Menu.Size.Medium;
+                }
+                if ((bool)MakeLarge.IsChecked)
+                {
+                    side.Size = DinoDiner.Menu.Size.Large;
+                }
                 order.Add(side);
             }
         }
@@ -62,10 +98,21 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 side = new MezzorellaSticks();
+                if ((bool)MakeSmall.IsChecked)
+                {
+                    side.Size = DinoDiner.Menu.Size.Small;
+                }
+                if ((bool)MakeMedium.IsChecked)
+                {
+                    side.Size = DinoDiner.Menu.Size.Medium;
+                }
+                if ((bool)MakeLarge.IsChecked)
+                {
+                    side.Size = DinoDiner.Menu.Size.Large;
+                }
                 order.Add(side);
             }
         }
-
         private void OnChangeSize(object sender, RoutedEventArgs args)
         {
             if (side == null) { return; }

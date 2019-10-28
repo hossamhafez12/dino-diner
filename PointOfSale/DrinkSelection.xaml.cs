@@ -42,7 +42,10 @@ namespace PointOfSale
         }
         void SelectFlavor(object sender, RoutedEventArgs args)
         {
-            NavigationService.Navigate(new FlavorSelection());
+            if(drink is Sodasaurus)
+            {
+                NavigationService.Navigate(new FlavorSelection((Sodasaurus)drink));
+            }
         }
         private void OnSelectSodassaurus(object sender, RoutedEventArgs args)
         {

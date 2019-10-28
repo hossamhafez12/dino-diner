@@ -39,8 +39,8 @@
             </Button.Background>
             Mozzerella Sticks
         </Button>
-        <RadioButton Name="MakeSmall" Tag ="Small" Click="OnChangeSize" Grid.Row="1" />
-        <RadioButton  Name="MakeMedium" Tag ="Medium" Click="OnChangeSize" Grid.Row="2"/>
-        <RadioButton  Name="MakeLarge" Tag ="Large" Click="OnChangeSize" Grid.Row="3"/>
+        <RadioButton Name="MakeSmall" Tag ="Small" Click="OnChangeSize" Grid.Row="1">Small</RadioButton>
+        <RadioButton  Name="MakeMedium" Tag ="Medium" Click="OnChangeSize" Grid.Row="2">Medium</RadioButton>
+        <RadioButton  Name="MakeLarge" Tag ="Large" Click="OnChangeSize" Grid.Row="3">Large</RadioButton>
     </WrapPanel>
 </Page>

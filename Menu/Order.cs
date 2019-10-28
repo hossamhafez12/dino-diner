@@ -9,7 +9,7 @@ namespace DinoDiner.Menu
     public class Order : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
-        double salesTaxRate = 0;
+        double salesTaxRate = .1;
         private List<IOrderItem> items = new List<IOrderItem>();
         //public ObservableCollection<IOrderItem> Items { get; set; } = new ObservableCollection<IOrderItem>();
 
@@ -29,7 +29,7 @@ namespace DinoDiner.Menu
         public double SalesTaxRate
         {
             get; set;
-        }
+        } = .1;
         public double SalesTaxCost
         {
             get
@@ -67,7 +67,12 @@ namespace DinoDiner.Menu
         }
         public bool Remove(IOrderItem item)
         {
-            return items.Remove(item);
+            bool removed = items.Remove(item);
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SubtotalCost"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SalesTaxCost"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("TotalCost"));
+            return removed;
         }
 
     }

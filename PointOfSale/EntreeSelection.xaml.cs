@@ -69,6 +69,7 @@ namespace PointOfSale
             {
                 entree = new PrehistoricPBJ();
                 order.Add(entree);
+                NavigationService.Navigate(new CustomizePrehistoricPBJ((PrehistoricPBJ)entree));
             }
         }
         private void OnSelectPterodactylWings(object sender, RoutedEventArgs args)

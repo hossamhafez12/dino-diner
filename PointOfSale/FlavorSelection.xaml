@@ -15,26 +15,26 @@
                 <Setter Property="MinHeight" Value="140"></Setter>
             </Style>
         </WrapPanel.Resources>
-        <Button VerticalContentAlignment="Center">
+        <Button VerticalContentAlignment="Center" Click="OnSelectCherry">
             Cherry
         </Button>
-        <Button VerticalContentAlignment="Center">
+        <!--Button VerticalContentAlignment="Center" Click="OnSelectChocolate">
             Chocolate
-        </Button>
-        <Button VerticalContentAlignment="Center">
+        </>
+        <Button VerticalContentAlignment="Center" Click="OnSelectCola">
             Cola
         </Button>
-        <Button VerticalContentAlignment="Center">
+        <Button VerticalContentAlignment="Center" Click="OnSelectLime">
             Lime
         </Button>
-        <Button VerticalContentAlignment="Center">
+        <Button VerticalContentAlignment="Center" Click="OnSelectOrange">
             Orange
         </Button>
-        <Button VerticalContentAlignment="Center">
+        <Button VerticalContentAlignment="Center" Click="OnSelectRootBeer">
             Root Beer
         </Button>
-        <Button VerticalContentAlignment="Center">
+        <Button VerticalContentAlignment="Center" Click="OnSelectVanilla">
             Vanilla
-        </Button>
+        </Button-->
     </WrapPanel>
 </Page>
