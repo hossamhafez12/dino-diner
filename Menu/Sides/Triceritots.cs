@@ -5,7 +5,7 @@ using Xunit;
 using System.ComponentModel;
 namespace DinoDiner.Menu
 {
-    public class Triceritots : Side, IMenuItem, IOrderItem
+    public class Triceritots : Side, IMenuItem, IOrderItem, INotifyPropertyChanged
     {
         public override List<string> Ingredients
         {
@@ -44,6 +44,7 @@ namespace DinoDiner.Menu
                     default:
                         break;
                 }
+                NotifyOfPropertyChanged("Description");
             }
         }
         public override string ToString()
@@ -54,7 +55,7 @@ namespace DinoDiner.Menu
         {
             get
             {
-                return size.ToString();
+                return this.ToString();
             }
         }
         public string[] Special

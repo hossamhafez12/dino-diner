@@ -15,25 +15,25 @@
                 <Setter Property="MinHeight" Value="140"></Setter>
             </Style>
         </WrapPanel.Resources>
-        <Button VerticalContentAlignment="Bottom">
+        <Button VerticalContentAlignment="Bottom" Click="OnSelectSodassaurus">
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-14.png"/>
             </Button.Background>
             Sodasaurus
         </Button>
-        <Button VerticalContentAlignment="Bottom">
+        <Button VerticalContentAlignment="Bottom" Click="OnSelectTryannotea">
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-13.png"/>
             </Button.Background>
             Tryannotea
         </Button>
-        <Button VerticalContentAlignment="Bottom">
+        <Button VerticalContentAlignment="Bottom" Click="OnSelectJurassicJava">
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-12.png"/>
             </Button.Background>
             Jurassic Java
         </Button>
-        <Button VerticalContentAlignment="Bottom">
+        <Button VerticalContentAlignment="Bottom" Click="OnSelectWater">
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-15.png"/>
             </Button.Background>
@@ -51,8 +51,8 @@
         <Button VerticalContentAlignment="Center">
             Sweet
         </Button>
-        <RadioButton GroupName="Size" Content="Small"/>
-        <RadioButton GroupName="Size" Content="Medium"/>
-        <RadioButton GroupName="Size" Content="Large"/>
+        <RadioButton Name="MakeSmall" Tag ="Small" Click="OnChangeSize" Grid.Row="1" />
+        <RadioButton  Name="MakeMedium" Tag ="Medium" Click="OnChangeSize" Grid.Row="2"/>
+        <RadioButton  Name="MakeLarge" Tag ="Large" Click="OnChangeSize" Grid.Row="3"/>
     </WrapPanel>
 </Page>

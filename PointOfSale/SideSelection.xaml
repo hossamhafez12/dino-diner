@@ -21,19 +21,19 @@
             </Button.Background>
             Fryceritops
         </Button>
-        <Button VerticalContentAlignment="Bottom">
+        <Button VerticalContentAlignment="Bottom" Click="OnSelectTriceritots">
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-10.png"/>
             </Button.Background>
             Triceritots
         </Button>
-        <Button VerticalContentAlignment="Bottom">
+        <Button VerticalContentAlignment="Bottom" Click="OnSelectMeteor">
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-09.png"/>
             </Button.Background>
             Meteor Mac &amp; Cheese
         </Button>
-        <Button VerticalContentAlignment="Bottom">
+        <Button VerticalContentAlignment="Bottom" Click="OnSelectMozzerellaSticks">
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-11.png"/>
             </Button.Background>

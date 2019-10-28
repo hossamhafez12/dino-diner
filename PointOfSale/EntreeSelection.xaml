@@ -15,43 +15,43 @@
                 <Setter Property="MinHeight" Value="140"></Setter>
             </Style>
         </WrapPanel.Resources>
-        <Button VerticalContentAlignment="Bottom">
+        <Button VerticalContentAlignment="Bottom" Click="OnSelectDinoNuggets">
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-02.png"/>
             </Button.Background>
             Dino-Nuggets
         </Button>
-        <Button VerticalContentAlignment="Bottom">
+        <Button VerticalContentAlignment="Bottom" Click="OnSelectBrontowurst">
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-01.png"/>
             </Button.Background>
             Brontowurst
         </Button>
-        <Button VerticalContentAlignment="Bottom">
+        <Button VerticalContentAlignment="Bottom" Click="OnSelectSteakosaurus">
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-05.png"/>
             </Button.Background>
             Steakosaurus
         </Button>
-        <Button VerticalContentAlignment="Bottom">
+        <Button VerticalContentAlignment="Bottom" Click="OnSelectKingBurger">
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-06.png"/>
             </Button.Background>
             T-Rex King Burger
         </Button>
-        <Button VerticalContentAlignment="Bottom">
+        <Button VerticalContentAlignment="Bottom" Click="OnSelectPrehistoric">
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-03.png"/>
             </Button.Background>
             Prehistoric PB&amp;J
         </Button>
-        <Button VerticalContentAlignment="Bottom">
+        <Button VerticalContentAlignment="Bottom" Click="OnSelectPterodactylWings">
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-04.png"/>
             </Button.Background>
             Pterodactyl Wings
         </Button>
-        <Button VerticalContentAlignment="Bottom">
+        <Button VerticalContentAlignment="Bottom" Click="OnSelectVelociWrap">
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-07.png"/>
             </Button.Background>

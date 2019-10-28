@@ -5,7 +5,7 @@ using Xunit;
 using System.ComponentModel;
 namespace DinoDiner.Menu
 {
-    public class MezzorellaSticks : Side, IMenuItem, IOrderItem
+    public class MezzorellaSticks : Side, IMenuItem, IOrderItem, INotifyPropertyChanged
     {
         public override List<string> Ingredients
         {
@@ -45,6 +45,7 @@ namespace DinoDiner.Menu
                     default:
                         break;
                 }
+                NotifyOfPropertyChanged("Description");
             }
 
         }
@@ -56,7 +57,7 @@ namespace DinoDiner.Menu
         {
             get
             {
-                return size.ToString();
+                return this.ToString();
             }
         }
         public string[] Special

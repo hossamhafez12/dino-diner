@@ -6,16 +6,19 @@ using Xunit;
 
 namespace MenuTest
 {
-    public class OrderTest: Order
+    /*public class OrderTest: Order
     {
         [Theory]
-        [InlineData(5)]
-        public void PriceShouldBeItSum(double Price)
+        [InlineData(5,4)]
+        [InlineData(3,8)]
+        [InlineData(2, 102)]
+        /*public void PriceShouldBeItSum(double price1, double price2)
         {
-            CretaceousCombo c = new CretaceousCombo(new MockEntree(5));
-            c.Side = new MockSide(5);
-            c.Drink = new MockDrink(5);
-            Assert.Equal(TotalCost, c.Price);
+            Order order = new Order();
+            order.Items.Add(new MockSide(price1));
+            order.Items.Add(new MockDrink(price2));
+            Assert.Equal(price1 + price2, order.SubtotalCost);
+
         }
-    }
+    }*/
 }
