@@ -39,20 +39,23 @@
             </Button.Background>
             Water
         </Button>
-        <Button VerticalContentAlignment="Center">
+        <Button VerticalContentAlignment="Center" Name="Lemon" Click="OnLemon">
             Lemon
         </Button>
-        <Button Click="SelectFlavor" VerticalContentAlignment="Center">
+        <Button Click="SelectFlavor" VerticalContentAlignment="Center" Name="Flavor">
             Flavor
         </Button>
-        <Button VerticalContentAlignment="Center">
+        <Button VerticalContentAlignment="Center" Name="Decaf" Click="OnDecaf">
             Decaf
         </Button>
-        <Button VerticalContentAlignment="Center">
+        <Button VerticalContentAlignment="Center" Name="Sweet" Click="OnSweet">
             Sweet
         </Button>
-        <RadioButton Name="MakeSmall" Tag ="Small" Click="OnChangeSize" Grid.Row="1" />
-        <RadioButton  Name="MakeMedium" Tag ="Medium" Click="OnChangeSize" Grid.Row="2"/>
-        <RadioButton  Name="MakeLarge" Tag ="Large" Click="OnChangeSize" Grid.Row="3"/>
+        <Button VerticalContentAlignment="Center" Name="Ice" Click="OnIce">
+            Ice
+        </Button>
+        <RadioButton Name="MakeSmall" Tag ="Small" Click="OnChangeSize" Grid.Row="1">Small</RadioButton>
+        <RadioButton  Name="MakeMedium" Tag ="Medium" Click="OnChangeSize" Grid.Row="2">Medium</RadioButton>
+        <RadioButton  Name="MakeLarge" Tag ="Large" Click="OnChangeSize" Grid.Row="3">Large</RadioButton>
     </WrapPanel>
 </Page>

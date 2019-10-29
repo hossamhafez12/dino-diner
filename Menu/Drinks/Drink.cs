@@ -36,6 +36,9 @@ namespace DinoDiner.Menu
         public void HoldIce()
         {
             this.ice = false;
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
+            NotifyOfPropertyChanged("Description");
         }
         public virtual Size Size
         {

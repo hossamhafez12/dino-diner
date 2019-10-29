@@ -18,9 +18,9 @@
         <Button VerticalContentAlignment="Center" Click="OnSelectCherry">
             Cherry
         </Button>
-        <!--Button VerticalContentAlignment="Center" Click="OnSelectChocolate">
+        <Button VerticalContentAlignment="Center" Click="OnSelectChocolate">
             Chocolate
-        </>
+        </Button>
         <Button VerticalContentAlignment="Center" Click="OnSelectCola">
             Cola
         </Button>
@@ -35,6 +35,6 @@
         </Button>
         <Button VerticalContentAlignment="Center" Click="OnSelectVanilla">
             Vanilla
-        </Button-->
+        </Button>
     </WrapPanel>
 </Page>

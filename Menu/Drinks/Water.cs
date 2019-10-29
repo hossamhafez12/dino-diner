@@ -52,6 +52,9 @@ namespace DinoDiner.Menu
         public void AddLemon()
         {
             this.lemon = true;
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
+            NotifyOfPropertyChanged("Description");
         }
         public override string ToString()
         {
@@ -61,7 +64,7 @@ namespace DinoDiner.Menu
         {
             get
             {
-                return size.ToString();
+                return this.ToString();
             }
         }
         public string[] Special

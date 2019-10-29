@@ -62,7 +62,7 @@ namespace DinoDiner.Menu
         {
             get
             {
-                return size.ToString();
+                return this.ToString();
             }
         }
         public string[] Special

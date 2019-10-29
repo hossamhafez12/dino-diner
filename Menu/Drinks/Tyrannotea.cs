@@ -14,6 +14,20 @@ namespace DinoDiner.Menu
 
             this.Size = Size.Small;
         }
+        public void AddIce()
+        {
+            this.Ice = true;
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
+            NotifyOfPropertyChanged("Description");
+        }
+        public void IsSweet()
+        {
+            this.Sweet = true;
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
+            NotifyOfPropertyChanged("Description");
+        }
         public override List<string> Ingredients
         {
             get
@@ -81,12 +95,7 @@ namespace DinoDiner.Menu
         {
             get
             {
-                List<string> description = new List<string>();
-                if (Sweet)
-                {
-                    description.Add("Sweet");
-                }
-                return size.ToString();
+                return this.ToString();
             }
         }
         public string[] Special

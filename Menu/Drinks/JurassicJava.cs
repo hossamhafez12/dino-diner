@@ -13,9 +13,19 @@ namespace DinoDiner.Menu
         {
             this.roomForCream = true;
         }
-        public void AddICe()
+        public void IsDecaf()
+        {
+            this.Decaf = true;
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
+            NotifyOfPropertyChanged("Description");
+        }
+        public void AddIce()
         {
             this.Ice = true;
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
+            NotifyOfPropertyChanged("Description");
         }
         public JurassicJava()
         {
@@ -72,11 +82,7 @@ namespace DinoDiner.Menu
         {
             get
             {
-                List<string> description = new List<string>();
-                description.Add(size.ToString());
-                description.Add(" ");
-                description.Add(this.ToString());           
-                return description.ToString();
+                return this.ToString();
             }
         }
         public string[] Special

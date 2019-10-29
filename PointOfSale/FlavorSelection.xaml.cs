@@ -32,6 +32,37 @@ namespace PointOfSale
         private void OnSelectCherry(object sender, RoutedEventArgs args)
         {
             soda.Flavor = SodasaurusFlavor.Cherry;
+            NavigationService.Navigate(new DrinkSelection());
+        }
+        private void OnSelectChocolate(object sender, RoutedEventArgs args)
+        {
+            soda.Flavor = SodasaurusFlavor.Chocolate;
+            NavigationService.Navigate(new DrinkSelection());
+        }
+        private void OnSelectCola(object sender, RoutedEventArgs args)
+        {
+            soda.Flavor = SodasaurusFlavor.Cola;
+            NavigationService.Navigate(new DrinkSelection());
+        }
+        private void OnSelectLime(object sender, RoutedEventArgs args)
+        {
+            soda.Flavor = SodasaurusFlavor.Lime;
+            NavigationService.Navigate(new DrinkSelection());
+        }
+        private void OnSelectOrange(object sender, RoutedEventArgs args)
+        {
+            soda.Flavor = SodasaurusFlavor.Orange;
+            NavigationService.Navigate(new DrinkSelection());
+        }
+        private void OnSelectRootBeer(object sender, RoutedEventArgs args)
+        {
+            soda.Flavor = SodasaurusFlavor.RootBeer;
+            NavigationService.Navigate(new DrinkSelection());
+        }
+        private void OnSelectVanilla(object sender, RoutedEventArgs args)
+        {
+            soda.Flavor = SodasaurusFlavor.Vanilla;
+            NavigationService.Navigate(new DrinkSelection());
         }
 
     }
