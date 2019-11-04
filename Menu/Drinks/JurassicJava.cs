@@ -67,7 +67,12 @@ namespace DinoDiner.Menu
                     default:
                         break;
                 }
+                NotifyOfPropertyChanged("Ingredients");
+                NotifyOfPropertyChanged("Special");
+                NotifyOfPropertyChanged("Description");
+                NotifyOfPropertyChanged("Price");
             }
+
         }
         public override string ToString()
         {

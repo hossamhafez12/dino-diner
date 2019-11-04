@@ -11,8 +11,10 @@ namespace DinoDiner.Menu
         public SodasaurusFlavor Flavor
         {
             get { return flavor; }
-            set { flavor = value; }
-        }
+            set { flavor = value;
+                NotifyOfPropertyChanged("Description");
+            }
+    }
         public Sodasaurus()
         {
             this.Size = Size.Small;
@@ -51,7 +53,11 @@ namespace DinoDiner.Menu
                         break;
                     default:
                         break;
+
                 }
+                NotifyOfPropertyChanged("Description");
+                NotifyOfPropertyChanged("Price");
+
             }
         }
         public override string ToString()

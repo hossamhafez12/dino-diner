@@ -47,6 +47,7 @@ namespace DinoDiner.Menu
             set
             {
                 drink = value;
+                NotifyOfPropertyChanged("Size");
                 NotifyOfPropertyChanged("Ingredients");
                 NotifyOfPropertyChanged("Special");
                 NotifyOfPropertyChanged("Price");
@@ -91,6 +92,7 @@ namespace DinoDiner.Menu
                 NotifyOfPropertyChanged("Size");
                 NotifyOfPropertyChanged("Price");
                 NotifyOfPropertyChanged("Calories");
+                NotifyOfPropertyChanged("Description");
             }
         }
 
