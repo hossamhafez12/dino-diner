@@ -12,6 +12,9 @@ namespace DinoDiner.Menu
         public void LeaveRoomForCream()
         {
             this.roomForCream = true;
+            NotifyOfPropertyChanged("Description");
+            NotifyOfPropertyChanged("Special");
+            NotifyOfPropertyChanged("Price");
         }
         public void IsDecaf()
         {

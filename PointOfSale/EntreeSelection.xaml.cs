@@ -37,6 +37,7 @@ namespace PointOfSale
             {
                 entree = new DinoNuggets();
                 order.Add(entree);
+                NavigationService.Navigate(new CustomizeDinoNuggets((DinoNuggets)entree));
             }
         }
         private void OnSelectBrontowurst(object sender, RoutedEventArgs args)
@@ -45,6 +46,7 @@ namespace PointOfSale
             {
                 entree = new Brontowurst();
                 order.Add(entree);
+                NavigationService.Navigate(new CustomizeBrontowurst((Brontowurst)entree));
             }
         }
         private void OnSelectSteakosaurus(object sender, RoutedEventArgs args)
@@ -53,6 +55,7 @@ namespace PointOfSale
             {
                 entree = new SteakosaurusBurger();
                 order.Add(entree);
+                NavigationService.Navigate(new CustomizeSteakosaurusBurger((SteakosaurusBurger)entree));
             }
         }
         private void OnSelectKingBurger(object sender, RoutedEventArgs args)
@@ -61,6 +64,7 @@ namespace PointOfSale
             {
                 entree = new TRexKingBurger();
                 order.Add(entree);
+                NavigationService.Navigate(new CustomizeTRexKingBurger((TRexKingBurger)entree));
             }
         }
         private void OnSelectPrehistoric(object sender, RoutedEventArgs args)
@@ -78,6 +82,7 @@ namespace PointOfSale
             {
                 entree = new PterodactylWings();
                 order.Add(entree);
+                NavigationService.Navigate(new CustomizePterodactylWings((PterodactylWings)entree));
             }
         }
         private void OnSelectVelociWrap(object sender, RoutedEventArgs args)
@@ -86,6 +91,7 @@ namespace PointOfSale
             {
                 entree = new VelociWrap();
                 order.Add(entree);
+                NavigationService.Navigate(new CustomizeVelociWrap((VelociWrap)entree));
             }
         }
     }

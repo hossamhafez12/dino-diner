@@ -17,24 +17,36 @@ using DinoDiner.Menu;
 namespace PointOfSale
 {
     /// <summary>
-    /// Interaction logic for CustomizePrehistoricPBJ.xaml
+    /// Interaction logic for CustomizeVelociWrap.xaml
     /// </summary>
-    public partial class CustomizePrehistoricPBJ : Page
+    public partial class CustomizeVelociWrap : Page
     {
-        private CretaceousCombo combo;
-        private PrehistoricPBJ pbj;
-        public CustomizePrehistoricPBJ(PrehistoricPBJ pbj)
+        public VelociWrap wrap;
+        public CretaceousCombo combo;
+        public CustomizeVelociWrap(VelociWrap st)
         {
             InitializeComponent();
-            this.pbj = pbj;
+            this.wrap = st;
         }
-        private void OnHoldPeanutButter(object sender, RoutedEventArgs args)
+
+        public CustomizeVelociWrap(CretaceousCombo combo)
         {
-            this.pbj.HoldPeanutButter();
+            InitializeComponent();
+            this.wrap = (VelociWrap)combo.Entree;
+            this.combo = combo;
         }
-        private void OnHoldJelly(object sender, RoutedEventArgs args)
+
+        private void OnHoldDressing(object sender, RoutedEventArgs e)
         {
-            this.pbj.HoldJelly();
+            wrap.HoldDressing();
+        }
+        private void OnHoldLettuce(object sender, RoutedEventArgs e)
+        {
+            wrap.HoldLettuce();
+        }
+        private void OnHoldCheese(object sender, RoutedEventArgs e)
+        {
+            wrap.HoldCheese();
         }
         private void OnDone(object sender, RoutedEventArgs args)
         {
@@ -45,9 +57,8 @@ namespace PointOfSale
             else
             {
                 NavigationService.Navigate(new MenuCategorySelection());
-
             }
+
         }
     }
-
 }

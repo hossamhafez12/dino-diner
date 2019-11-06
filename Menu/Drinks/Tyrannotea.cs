@@ -44,6 +44,9 @@ namespace DinoDiner.Menu
         public void AddLemon()
         {
             this.lemon = true;
+            NotifyOfPropertyChanged("Description");
+            NotifyOfPropertyChanged("Special");
+            NotifyOfPropertyChanged("Price");
         }
         public override Size Size
         {
@@ -80,6 +83,9 @@ namespace DinoDiner.Menu
                     default:
                         break;
                 }
+                NotifyOfPropertyChanged("Description");
+                NotifyOfPropertyChanged("Special");
+                NotifyOfPropertyChanged("Price");
             }
         }
         public override string ToString()
@@ -91,10 +97,12 @@ namespace DinoDiner.Menu
             else
             return size + " Tyrannotea";
         }
-        public string Description
+        public override string Description
         {
             get
             {
+                List<string> description = new List<string>();
+                if (Sweet) description.Add("Sweet");
                 return this.ToString();
             }
         }

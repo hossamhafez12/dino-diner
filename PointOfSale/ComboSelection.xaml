@@ -14,43 +14,43 @@
                 <Setter Property="MinHeight" Value="140"></Setter>
             </Style>
         </WrapPanel.Resources>
-        <Button Click ="Select" VerticalContentAlignment="Bottom">
+        <Button Click ="SelectDinoNuggets" VerticalContentAlignment="Bottom">
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-02.png"/>
             </Button.Background>
             Dino-Nuggets Combo
         </Button>
-        <Button Click ="Select" VerticalContentAlignment="Bottom">
+        <Button Click ="SelectBrontowurst" VerticalContentAlignment="Bottom">
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-01.png"/>
             </Button.Background>
             Brontowurst Combo
         </Button>
-        <Button Click ="Select" VerticalContentAlignment="Bottom">
+        <Button Click ="SelectSteakosaurus" VerticalContentAlignment="Bottom">
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-05.png"/>
             </Button.Background>
             Steakosaurus Combo
         </Button>
-        <Button Click ="Select" VerticalContentAlignment="Bottom">
+        <Button Click ="SelectTRexKingBurger" VerticalContentAlignment="Bottom">
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-06.png"/>
             </Button.Background>
             T-Rex King Burger Combo
         </Button>
-        <Button Click ="Select" VerticalContentAlignment="Bottom">
+        <Button Click ="SelectPrehistoric" VerticalContentAlignment="Bottom">
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-03.png"/>
             </Button.Background>
             Prehistoric PB&amp;J Combo
         </Button>
-        <Button Click ="Select" VerticalContentAlignment="Bottom">
+        <Button Click ="SelectPterodactyWings" VerticalContentAlignment="Bottom">
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-04.png"/>
             </Button.Background>
             Pterodactyl Wings Combo
         </Button>
-        <Button Click ="Select" VerticalContentAlignment="Bottom">
+        <Button Click ="SelectVelociWrap" VerticalContentAlignment="Bottom">
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-07.png"/>
             </Button.Background>

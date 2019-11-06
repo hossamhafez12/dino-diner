@@ -17,24 +17,36 @@ using DinoDiner.Menu;
 namespace PointOfSale
 {
     /// <summary>
-    /// Interaction logic for CustomizePrehistoricPBJ.xaml
+    /// Interaction logic for CustomizeBrontowurst.xaml
     /// </summary>
-    public partial class CustomizePrehistoricPBJ : Page
+    public partial class CustomizeBrontowurst : Page
     {
-        private CretaceousCombo combo;
-        private PrehistoricPBJ pbj;
-        public CustomizePrehistoricPBJ(PrehistoricPBJ pbj)
+        public Brontowurst wurst;
+        public CretaceousCombo combo;
+        public CustomizeBrontowurst(Brontowurst bron)
         {
             InitializeComponent();
-            this.pbj = pbj;
+            this.wurst = bron;
         }
-        private void OnHoldPeanutButter(object sender, RoutedEventArgs args)
+
+        public CustomizeBrontowurst(CretaceousCombo combo)
         {
-            this.pbj.HoldPeanutButter();
+            InitializeComponent();
+            this.wurst = (Brontowurst)combo.Entree;
+            this.combo = combo;
         }
-        private void OnHoldJelly(object sender, RoutedEventArgs args)
+
+        private void OnHoldBun(object sender, RoutedEventArgs e)
         {
-            this.pbj.HoldJelly();
+            this.wurst.HoldBun();
+        }
+        private void OnHoldPeppers(object sender, RoutedEventArgs e)
+        {
+            this.wurst.HoldPeppers();
+        }
+        private void OnHoldOnion(object sender, RoutedEventArgs e)
+        {
+            this.wurst.HoldOnion();
         }
         private void OnDone(object sender, RoutedEventArgs args)
         {
@@ -45,9 +57,8 @@ namespace PointOfSale
             else
             {
                 NavigationService.Navigate(new MenuCategorySelection());
-
             }
+
         }
     }
-
 }

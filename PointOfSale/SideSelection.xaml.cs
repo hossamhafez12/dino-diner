@@ -23,6 +23,7 @@ namespace PointOfSale
     public partial class SideSelection : Page
     {
         private Side side;
+        private CretaceousCombo combo;
         public SideSelection()
         {
             InitializeComponent();

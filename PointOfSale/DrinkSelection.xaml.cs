@@ -23,6 +23,7 @@ namespace PointOfSale
     public partial class DrinkSelection : Page
     {
         private Drink drink;
+        private CretaceousCombo combo;
         public DrinkSelection()
         {
             InitializeComponent();

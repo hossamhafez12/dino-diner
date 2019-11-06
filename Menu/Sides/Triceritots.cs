@@ -45,6 +45,8 @@ namespace DinoDiner.Menu
                         break;
                 }
                 NotifyOfPropertyChanged("Description");
+                NotifyOfPropertyChanged("Special");
+                NotifyOfPropertyChanged("Price");
             }
         }
         public override string ToString()

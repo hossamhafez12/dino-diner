@@ -39,8 +39,25 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Gets and sets the side
         /// </summary>
-        public Side Side { get; set; } = new Fryceritops();
+        public Side side { get; set; } = new Fryceritops();
         private Drink drink = new Sodasaurus();
+        public Side Side
+        {
+            get { return side; }
+            set
+            {
+                side = value;
+                NotifyOfPropertyChanged("Size");
+                NotifyOfPropertyChanged("Ingredients");
+                NotifyOfPropertyChanged("Special");
+                NotifyOfPropertyChanged("Price");
+                NotifyOfPropertyChanged("Calories");
+                side.PropertyChanged += (object sender, PropertyChangedEventArgs args) =>
+                {
+                    NotifyOfPropertyChanged(args.PropertyName);
+                };
+            }
+        }
         public Drink Drink
         {
             get { return drink; }
@@ -141,6 +158,7 @@ namespace DinoDiner.Menu
             get
             {
                 List<string> special = new List<string>();
+                special.Add(Entree.Description);
                 special.AddRange(Entree.Special);
                 special.Add(Side.Description);
                 special.AddRange(Side.Special);

@@ -47,6 +47,9 @@ namespace DinoDiner.Menu
                     default:
                         break;
                 }
+                NotifyOfPropertyChanged("Description");
+                NotifyOfPropertyChanged("Special");
+                NotifyOfPropertyChanged("Price");
             }
         }
         public void AddLemon()
