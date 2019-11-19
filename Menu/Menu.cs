@@ -109,6 +109,7 @@ namespace DinoDiner.Menu
             }
         }
         public Drink Sodasaurus { get; set; } = new Sodasaurus();
+        public Side Fryceritops { get; set; } = new Fryceritops();
         /// <summary>
         /// This is a method to overide the items
         /// </summary>
