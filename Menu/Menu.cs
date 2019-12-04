@@ -15,6 +15,13 @@ namespace DinoDiner.Menu
             {
                 List<IMenuItem> availableMenuItems = new List<IMenuItem>
                 {
+                    new CretaceousCombo(new Brontowurst()),
+                    new CretaceousCombo(new DinoNuggets()),
+                    new CretaceousCombo(new PrehistoricPBJ()),
+                    new CretaceousCombo(new SteakosaurusBurger()),
+                    new CretaceousCombo(new TRexKingBurger()),
+                    new CretaceousCombo(new VelociWrap()),
+                    new CretaceousCombo(new PrehistoricPBJ()),
                     new Brontowurst(),
                     new DinoNuggets(),
                     new PrehistoricPBJ(),
@@ -97,13 +104,13 @@ namespace DinoDiner.Menu
             {
                 List<IMenuItem> availableCombos = new List<IMenuItem>
                 {
-                    new Brontowurst(),
-                    new DinoNuggets(),
-                    new PrehistoricPBJ(),
-                    new SteakosaurusBurger(),
-                    new TRexKingBurger(),
-                    new VelociWrap(),
-                    new PrehistoricPBJ()
+                    new CretaceousCombo(new Brontowurst()),
+                    new CretaceousCombo(new DinoNuggets()),
+                    new CretaceousCombo(new PrehistoricPBJ()),
+                    new CretaceousCombo(new SteakosaurusBurger()),
+                    new CretaceousCombo(new TRexKingBurger()),
+                    new CretaceousCombo(new VelociWrap()),
+                    new CretaceousCombo(new PrehistoricPBJ()), 
                 };
                 return availableCombos;
             }
