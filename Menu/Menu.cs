@@ -95,40 +95,21 @@ namespace DinoDiner.Menu
                 return availableDrinks;
             }
         }
-        public List<string> possibleIngridents
+        public HashSet<string> possibleIngredients
         {
             get
             {
-                List<string> possible = new List<string>();
+                HashSet<string> pos = new HashSet<string>();
                 {
-                    possible.Add("Bun");
-                    possible.Add("Peppers");
-                    possible.Add("Onions");
-                    possible.Add("Chicken Nugget");
-                    possible.Add("Peanut Butter");
-                    possible.Add("Jelly");
-                    possible.Add("Chicken");
-                    possible.Add("Pickle");
-                    possible.Add("Ketchup");
-                    possible.Add("Mustard");
-                    possible.Add("Tomato");
-                    possible.Add("Mayo");
-                    possible.Add("Lettuce");
-                    possible.Add("Tortilla");
-                    possible.Add("Chicken Breast");
-                    possible.Add("Ceasar Dressing");
-                    possible.Add("Parmesan Cheese");
-                    possible.Add("Steakburger Pattie");
-                    possible.Add("Wing Sauce");
-                    possible.Add("Potato");
-                    possible.Add("Salt");
-                    possible.Add("Vegetable oil");
-                    possible.Add("Macroni Noodles");
-                    possible.Add("Cheese Product");
-                    possible.Add("Pork Sausage");
-                    possible.Add("Breading");
+                    foreach (IMenuItem item in AvailableMenuItems)
+                    {
+                        foreach (string s in item.Ingredients)
+                        {
+                            pos.Add(s);
+                        }
+                    }
                 }
-                return possible;
+                return pos;
             }
         }
         /// <summary>
@@ -170,62 +151,69 @@ namespace DinoDiner.Menu
         }
         public List<IMenuItem> Search(List<IMenuItem> items, string searchString)
         {
-            List<IMenuItem> res = new List<IMenuItem>();
+            List<IMenuItem> result = new List<IMenuItem>();
 
             foreach (IMenuItem entr in AvailableMenuItems)
             {
                 if (entr.ToString().Contains(searchString))
                 {
-                    res.Add(entr);
+                    result.Add(entr);
                 }
             }
-            return res;
+            return result;
         }
-        public List<IMenuItem> ApplyFilter(List<IMenuItem> searchRes, List<string> menuCatogri)
+        public List<IMenuItem> ApplyFilter(List<IMenuItem> searchRes, List<string> menuCatogory)
         {
             List<IMenuItem> result = new List<IMenuItem>();
             foreach (IMenuItem item in searchRes)
             {
-                if (item is Entree && menuCatogri.Contains("Entree"))
+                if (item is Entree && menuCatogory.Contains("Entree"))
                 {
                     result.Add(item);
                 }
-                else if (item is CretaceousCombo && menuCatogri.Contains("Combo"))
+                else if (item is CretaceousCombo && menuCatogory.Contains("Combo"))
                 {
                     result.Add(item);
                 }
-                else if (item is Side && menuCatogri.Contains("Side"))
+                else if (item is Side && menuCatogory.Contains("Side"))
                 {
                     result.Add(item);
                 }
-                else if (item is Drink && menuCatogri.Contains("Drink"))
+                else if (item is Drink && menuCatogory.Contains("Drink"))
                 {
                     result.Add(item);
                 }
             }
             return result;
         }
-        public List<IMenuItem> FilterByMinPrice(List<IMenuItem> movies, float minPrice)
+        public List<IMenuItem> FilterByMinPrice(List<IMenuItem> theItems, float minPrice, float maxPrice)
         {
             List<IMenuItem> results = new List<IMenuItem>();
-            foreach (IMenuItem items in AvailableMenuItems)
+            foreach (IMenuItem items in theItems)
             {
-                if (items.Price != 0 && minPrice >= items.Price)
+                if (items.Price != 0 && minPrice <= items.Price && maxPrice >= items.Price)
                 {
                     results.Add(items);
                 }
             }
             return results;
         }
-        public List<IMenuItem> FilterByMaxPrice(List<IMenuItem> movies, float maxPrice)
+        public List<IMenuItem> FilterByIngredients(List<IMenuItem> item1, List<string> ingredients)
         {
             List<IMenuItem> results = new List<IMenuItem>();
-            foreach (IMenuItem items in AvailableMenuItems)
+            foreach (IMenuItem items in item1)
             {
-                if (items.Price != 0 && maxPrice <= items.Price)
+                bool f = true;
+                foreach (string s in ingredients)
                 {
-                    results.Add(items);
+                    if (items.Ingredients.Contains(s))
+                    {
+                        f = false;
+                        break;
+                    }
+
                 }
+                if (f) results.Add(items);
             }
             return results;
         }
