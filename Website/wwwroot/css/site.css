@@ -12,3 +12,39 @@ body {
     padding-right: 15px;
 }
 
+#bannerimage {
+    width: 150%;
+    background-image: url(/images/DinoDiner-24.png);
+    height: 800px;
+    background-color: purple;
+    background-position: center;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.menu-item {
+}
+
+.column {
+    float: left;
+    width: 20%;
+    padding: 10px;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    min-width: 300px;
+}
+
+.menu.Category {
+}

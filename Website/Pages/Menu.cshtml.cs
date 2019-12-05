@@ -11,8 +11,39 @@ namespace Website.Pages
     public class MenuModel : PageModel
     {
         public Menu Menu { get; } = new Menu();
+        [BindProperty]
+        public string search { get; set; }
+        [BindProperty]
+        public List<string> menuCategory { get; set; } = new List<string>();
+        public List<IMenuItem> Items { get; set; }
+        [BindProperty]
+        public float? minPrice { get; set; }
+        [BindProperty]
+        public float? maxPrice { get; set; }
         public void OnGet()
         {
+            Items = Menu.AvailableMenuItems;
+        }
+        public void OnPost()
+        {
+            Items = Menu.AvailableMenuItems;
+
+            if (search != null)
+            {
+                Items = Menu.Search(Items, search);
+            }
+            if (menuCategory.Count != 0)
+            {
+                Items = Menu.ApplyFilter(Items, menuCategory);
+            }
+            if (minPrice != null)
+            {
+                Items = Menu.FilterByMinPrice(Items, (float)minPrice);
+            }
+            if (maxPrice != null)
+            {
+                Items = Menu.FilterByMaxPrice(Items, (float)maxPrice);
+            }
 
         }
     }
