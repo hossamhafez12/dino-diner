@@ -4,7 +4,7 @@ using System.Text;
 using System.ComponentModel;
 namespace DinoDiner.Menu
 {
-    public abstract class Entree: INotifyPropertyChanged, IOrderItem
+    public abstract class Entree: IMenuItem, INotifyPropertyChanged, IOrderItem
     {
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -20,6 +20,6 @@ namespace DinoDiner.Menu
         public virtual List<string> Ingredients { get; }
         public virtual string Description { get; }
         public virtual string[] Special { get; }
-
+        public string Category { get; } = "Entree";
     }
 }

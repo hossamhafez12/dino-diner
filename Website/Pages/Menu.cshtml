@@ -15,8 +15,30 @@
             {
                 <div class="menu-item">
                     <h3>@combo.ToString()</h3>
-                    <p>Calories: @combo.Calories </p>
-                    <p>Price: @combo.Price</p>
+                    <table class="table">
+                        <tr>
+                            <th>Size</th>
+                            <th>Price</th>
+                            <th>Calories</th>
+                        </tr>
+                        <tr>
+                            <td>Small</td>
+                            <td>@combo.Price</td>
+                            <td>@combo.Calories </td>
+                        </tr>
+                        @{combo.Size = Size.Medium; }
+                        <tr>
+                            <td>Medium</td>
+                            <td>@combo.Price</td>
+                            <td>@combo.Calories </td>
+                        </tr>
+                        @{ combo.Size = Size.Large;}
+                        <tr>
+                            <td>Large</td>
+                            <td>@combo.Price</td>
+                            <td>@combo.Calories </td>
+                        </tr>
+                    </table>
                     @foreach (string s in combo.Ingredients)
                     {
                         <p>@s</p>
@@ -27,54 +49,100 @@
             }
         }
     </div>
+
     <div class="column">
         <h2>Entrees</h2>
-        @foreach (var entree in Model.Items)
+        @foreach (var item in Model.Items)
         {
-            if (entree is Entree)
+            if (item is Entree entree)
             {
                 <div class="menu-item">
                     <h3>@entree.ToString()</h3>
+
                     @foreach (string s in entree.Ingredients)
                     {
                         <p>@s</p>
                     }
-                    <p>Calories: @entree.Calories </p>
-                    <p>Price: @entree.Price</p>
+                    <p>@entree.Price</p>
+                    <p>@entree.Calories </p>
                 </div>
             }
         }
     </div>
     <div class="column">
         <h2>Sides</h2>
-        @foreach (var side in Model.Items)
+        @foreach (var item in Model.Items)
         {
-            if (side is Side)
+            if (item is Side side)
             {
                 <div class="menu-item">
                     <h3>@side.ToString()</h3>
+                    <table class="table">
+                        <tr>
+                            <th>Size</th>
+                            <th>Price</th>
+                            <th>Calories</th>
+                        </tr>
+                        <tr>
+                            <td>Small</td>
+                            <td>@side.Price</td>
+                            <td>@side.Calories </td>
+                        </tr>
+                        @{side.Size = Size.Medium; }
+                        <tr>
+                            <td>Medium</td>
+                            <td>@side.Price</td>
+                            <td>@side.Calories</td>
+                        </tr>
+                        @{ side.Size = Size.Large;}
+                        <tr>
+                            <td>Large</td>
+                            <td> @side.Price</td>
+                            <td> @side.Calories</td>
+                        </tr>
+                    </table>
                     @foreach (string s in side.Ingredients)
                     {
                         <p>@s</p>
                     }
-                    <p>Calories: @side.Calories </p>
-                    <p>Price: @side.Price</p>
                 </div>
             }
         }
         <h2>Drinks</h2>
-        @foreach (var drink in Model.Items)
+        @foreach (var item in Model.Items)
         {
-            if (drink is Drink)
+            if (item is Drink drink)
             {
                 <div class="menu-item">
                     <h3>@drink.ToString()</h3>
+                    <table class="table">
+                        <tr>
+                            <th>Size</th>
+                            <th>Price</th>
+                            <th>Calories</th>
+                        </tr>
+                        <tr>
+                            <td>Small</td>
+                            <td>@drink.Price</td>
+                            <td>@drink.Calories </td>
+                        </tr>
+                        @{drink.Size = Size.Medium;}
+                        <tr>
+                            <td>Medium</td>
+                            <td>@drink.Price</td>
+                            <td>@drink.Calories</td>
+                        </tr>
+                        @{drink.Size = Size.Large;}
+                        <tr>
+                            <td>Large</td>
+                            <td>Price: @drink.Price</td>
+                            <td>Calories: @drink.Calories</td>
+                        </tr>
+                    </table>
                     @foreach (string s in drink.Ingredients)
                     {
                         <p>@s</p>
                     }
-                    <p>Calories: @drink.Calories</p>
-                    <p>Price: @drink.Price</p>
                 </div>
             }
         }
@@ -83,7 +151,6 @@
         <form method="post">
             <input type="text" name="search" id="search" value="@Model.search" />
             <input type="submit" name="Search" />
-
             <div class="menuCategory">
                 <h1>Menu Category</h1>
                 <label>
@@ -105,11 +172,11 @@
                 <h1>Price</h1>
                 <label>
                     Min
-                    <input id="minimum-price" type="number" min="0" max="100" step="1" name="minPrice" value="@Model.minPrice" />
+                    <input id="minimum-price" type="number" min="0" max="10" step="0.1" name="minPrice" value="@Model.minPrice" />
                 </label>
                 <label>
                     Max
-                    <input id="maximum-price" type="number" min="0" max="100" step="1" name="maxPrice" value="@Model.maxPrice" />
+                    <input id="maximum-price" type="number" min="0" max="10" step="0.1" name="maxPrice" value="@Model.maxPrice" />
                 </label>
             </div>
             <div class="row">
@@ -124,7 +191,7 @@
                         Peppers
                     </label>
                     <label>
-                        <input type="checkbox" name="excludeIngredient" value="Onions" checked="@Model.excludeIngredient.Contains("Onions")" />
+                        <input type="checkbox" name="excludeIngredient" value="Onion" checked="@Model.excludeIngredient.Contains("Onions")" />
                         Onions
                     </label>
                     <label>
@@ -177,6 +244,10 @@
                         Ceasar Dressing
                     </label>
                     <label>
+                        <input type="checkbox" name="excludeIngredient" value="Ceasar Dressing" checked="@Model.excludeIngredient.Contains("Ceasar Dressing")" />
+                        Ceasar Dressing
+                    </label>
+                    <label>
                         <input type="checkbox" name="excludeIngredient" value="Steakburger Pattie" checked="@Model.menuCategory.Contains("Steakburger Pattie")" />
                         Steakburger Pattie
                     </label>
@@ -197,7 +268,7 @@
                         Vegetable oil
                     </label>
                     <label>
-                        <input type="checkbox" name="excludeIngredient" value="Macaroni Noodles" checked="@Model.menuCategory.Contains("Macroni Noodles")" />
+                        <input type="checkbox" name="excludeIngredient" value="Macroni Noodles" checked="@Model.menuCategory.Contains("Macroni Noodles")" />
                         Macaroni Noodles
                     </label>
                     <label>

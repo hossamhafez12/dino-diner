@@ -167,5 +167,6 @@ namespace DinoDiner.Menu
                 return special.ToArray();
             }
         }
+        public string Category { get; } = "Combo";
     }
 }

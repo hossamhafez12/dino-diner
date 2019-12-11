@@ -13,5 +13,6 @@ namespace DinoDiner.Menu
         uint Calories { get; }
 
         List<string> Ingredients { get; }
+        string Category { get; }
     }
 }
